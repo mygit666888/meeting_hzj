@@ -8,17 +8,18 @@
     <servlet-class>com.chinasofti.meeting.controller.LoginServlet</servlet-class>
   </servlet>
   <servlet>
-    <description>This is the description of my J2EE component</description>
-    <display-name>This is the display name of my J2EE component</display-name>
-    <servlet-name>ConnectionFactory</servlet-name>
-    <servlet-class>com.chinasofti.meeting.util.ConnectionFactory</servlet-class>
+    <servlet-name>ImageServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.controller.ImageServlet</servlet-class>
   </servlet>
   <servlet>
-    <description>This is the description of my J2EE component</description>
-    <display-name>This is the display name of my J2EE component</display-name>
-    <servlet-name>Employee</servlet-name>
-    <servlet-class>com.chinasofti.meeting.vo.Employee</servlet-class>
+    <servlet-name>CheckServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.controller.CheckServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>ViewAllDepartmentServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.controller.ViewAllDepartmentServlet</servlet-class>
+  </servlet>
+
 
 
 
@@ -27,14 +28,18 @@
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-    <servlet-name>ConnectionFactory</servlet-name>
-    <url-pattern>/connectionFactory</url-pattern>
+    <servlet-name>ImageServlet</servlet-name>
+    <url-pattern>/imageServlet</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-    <servlet-name>Employee</servlet-name>
-    <url-pattern>/servlet/Employee</url-pattern>
+    <servlet-name>CheckServlet</servlet-name>
+    <url-pattern>/check</url-pattern>
   </servlet-mapping>
-	
+  <servlet-mapping>
+    <servlet-name>ViewAllDepartmentServlet</servlet-name>
+    <url-pattern>/viewAllDepartmentServlet</url-pattern>
+  </servlet-mapping>
+
 	<welcome-file-list>
 		<welcome-file>login.jsp</welcome-file>
 	</welcome-file-list>
