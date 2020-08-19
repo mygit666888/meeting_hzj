@@ -15,25 +15,29 @@ import com.chinasofti.meeting.vo.Department;
 
 public class ViewAllDepartmentServlet extends HttpServlet {
 
-
+	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		doPost(request, response);
 	}
 
-
+	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		DepartmentService departmentService = new DepartmentService();
 		List<Department> departmentList = departmentService.viewAllDepartments();
 		request.setAttribute("departmentList", departmentList);
-
+		
 		String code = request.getParameter("code");
+		//为注册页面提供部门列表
 		if(code!=null && "regist".equals(code)) {
 			request.getRequestDispatcher("register.jsp").forward(request, response);
 		}
-
-
+		
+		if("viewalldepartments".equals(code)) {
+			request.getRequestDispatcher("departments.jsp").forward(request, response);
+		}
+		
 	}
 
 }

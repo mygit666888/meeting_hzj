@@ -7,38 +7,42 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ConnectionFactory {
-	private static Connection conn=null;
+	
+	private static Connection conn = null;
 	
 	public static Connection getConnection() {
-		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			conn=DriverManager.getConnection
-					("jdbc:mysql://127.0.0.1:3306/meeting?useUnicode=true&characterEncoding=utf8","root","1234");
+			conn = DriverManager.getConnection(
+					"jdbc:mysql://127.0.0.1:3306/meeting?useUnicode=true&characterEncoding=utf8"
+					,"root","1234");
+			System.out.println("Connection success");
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
-		return conn;
 		
+		return conn;
 	}
+	
 	public static void closeConnection(Connection conn,PreparedStatement pstmt,ResultSet rs) {
-		if(rs!=null) {
+		
+		if(rs != null) {
 			try {
 				rs.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
+				
 				e.printStackTrace();
 			}
 		}
-		if(pstmt!=null) {
+		if(pstmt != null) {
 			try {
 				pstmt.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
+				// 
 				e.printStackTrace();
 			}
 		}
@@ -46,12 +50,11 @@ public class ConnectionFactory {
 			try {
 				conn.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
+				// 
 				e.printStackTrace();
 			}
 		}
 	}
-	
 	
 	public static void main(String[] args) {
 		Connection con = getConnection();

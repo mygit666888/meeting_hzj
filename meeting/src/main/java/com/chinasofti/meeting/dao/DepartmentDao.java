@@ -13,7 +13,7 @@ import com.chinasofti.meeting.vo.Department;
 public class DepartmentDao {
 
 	private Connection conn;
-
+	
 	public List<Department> selectAll() {
 		conn = ConnectionFactory.getConnection();
 		List<Department> departmentList = new ArrayList<Department>();
@@ -28,24 +28,105 @@ public class DepartmentDao {
 				department = new Department();
 				department.setDepartmentid(rs.getString("departmentid"));
 				department.setDepartmentname(rs.getString("departmentname"));
-
+				
 				departmentList.add(department);
 			}
-
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}finally {
 			ConnectionFactory.closeConnection(conn, pstmt, rs);
 		}
-
+		
 		return departmentList;
 	}
-
+	
 	public static void main(String[] args) {
 		DepartmentDao dao = new DepartmentDao();
-		List<Department> departmentList = dao.selectAll();
-		for(Department d:departmentList) {
-			System.out.println(d);
+		/*
+		 * List<Department> departmentList = dao.selectAll(); for(Department
+		 * d:departmentList) { System.out.println(d); }
+		 */
+		//dao.insert("lalalla");
+		dao.delete(8);
+		
+	}
+
+	public void insert(String departmentname) {
+		conn = ConnectionFactory.getConnection();
+		String sql = "insert into department (departmentname) value (?)";
+		PreparedStatement pstmt = null;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, departmentname);
+			pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}finally {
+			ConnectionFactory.closeConnection(conn, pstmt, null);
+		}
+
+	}
+	//根据id删除部门
+	public void delete(Integer departmentid) {
+		
+		conn = ConnectionFactory.getConnection();
+		String sql = "delete from department where departmentid=?";
+		PreparedStatement pstmt = null;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, departmentid);
+			pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}finally {
+			ConnectionFactory.closeConnection(conn, pstmt, null);
+		}
+
+	}
+
+	public void update(String departmentname) {
+		conn = ConnectionFactory.getConnection();
+		String sql = "update department where departmentname =?";
+		PreparedStatement pstmt = null;
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, departmentname);
+			pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}finally {
+			ConnectionFactory.closeConnection(conn, pstmt, null);
+		}
+
+	}
+	public void updateNameById(int departmentid, String departmentname) {
+		conn = ConnectionFactory.getConnection();
+		String sql = "update department set departmentname=? where departmentid=?";
+		PreparedStatement pstmt = null;
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, departmentname);
+			pstmt.setInt(2, departmentid);
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new RuntimeException("编辑部门失败");
+		}finally {
+			ConnectionFactory.closeConnection(conn, pstmt, null);
 		}
 	}
-}
+		
+		
+	}
+	
+	
+	

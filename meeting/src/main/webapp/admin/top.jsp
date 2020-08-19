@@ -16,6 +16,7 @@
             <div class="header-quicklink">
                 欢迎您，<strong>${sessionScope.employeename }</strong>
                 <a href="changepassword.html">[修改密码]</a>
+                <a href="logOffServlet" target="_parent">退出登陆</a>
             </div>
         </div>
     </body>

@@ -19,6 +19,77 @@
     <servlet-name>ViewAllDepartmentServlet</servlet-name>
     <servlet-class>com.chinasofti.meeting.controller.ViewAllDepartmentServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>ValidateUsernameServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.controller.ValidateUsernameServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>RegistServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.controller.RegistServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ViewAllEmployeesServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.controller.ViewAllEmployeesServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ViewAllEmployeesFYServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.controller.ViewAllEmployeesFYServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ApproveServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.controller.ApproveServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddDeleteDepartmentServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.controller.AddDeleteDepartmentServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ViewMyBookingServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.controller.ViewMyBookingServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ViewbookingDtailServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.controller.ViewbookingDtailServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CancelMeetingServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.controller.CancelMeetingServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ViewAllMeetingRoomsServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.controller.ViewAllMeetingRoomsServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ViewOneMeetingroomServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.controller.ViewOneMeetingroomServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UpdateMeetingroomServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.controller.UpdateMeetingroomServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddMeetingroomServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.controller.AddMeetingroomServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>LogOffServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.controller.LogOffServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
 
 
 
@@ -35,10 +106,76 @@
     <servlet-name>CheckServlet</servlet-name>
     <url-pattern>/check</url-pattern>
   </servlet-mapping>
+  
   <servlet-mapping>
     <servlet-name>ViewAllDepartmentServlet</servlet-name>
     <url-pattern>/viewAllDepartmentServlet</url-pattern>
   </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>ViewAllDepartmentServlet</servlet-name>
+    <url-pattern>/admin/viewAllDepartmentServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet-mapping>
+    <servlet-name>ValidateUsernameServlet</servlet-name>
+    <url-pattern>/validateUsernameServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RegistServlet</servlet-name>
+    <url-pattern>/registServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ViewAllEmployeesServlet</servlet-name>
+    <url-pattern>/admin/viewAllEmployeesServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ViewAllEmployeesFYServlet</servlet-name>
+    <url-pattern>/admin/viewAllEmployeesFYServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ApproveServlet</servlet-name>
+    <url-pattern>/admin/approveServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddDeleteDepartmentServlet</servlet-name>
+    <url-pattern>/admin/addDeleteDepartmentServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ViewMyBookingServlet</servlet-name>
+    <url-pattern>/admin/viewMyBookingServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ViewbookingDtailServlet</servlet-name>
+    <url-pattern>/admin/viewbookingDtailServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CancelMeetingServlet</servlet-name>
+    <url-pattern>/admin/cancelMeetingServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ViewAllMeetingRoomsServlet</servlet-name>
+    <url-pattern>/admin/viewAllMeetingRoomsServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ViewOneMeetingroomServlet</servlet-name>
+    <url-pattern>/admin/viewOneMeetingroomServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateMeetingroomServlet</servlet-name>
+    <url-pattern>/admin/updateMeetingroomServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddMeetingroomServlet</servlet-name>
+    <url-pattern>/admin/addMeetingroomServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LogOffServlet</servlet-name>
+    <url-pattern>/admin/logOffServlet</url-pattern>
+  </servlet-mapping>
+
+
 
 	<welcome-file-list>
 		<welcome-file>login.jsp</welcome-file>

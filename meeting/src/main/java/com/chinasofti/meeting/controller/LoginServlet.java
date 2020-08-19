@@ -2,27 +2,32 @@ package com.chinasofti.meeting.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
 import com.chinasofti.meeting.service.EmployeeService;
 import com.chinasofti.meeting.vo.Employee;
+
 public class LoginServlet extends HttpServlet {
+
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		doPost(request, response);
 	}
 
-
+	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//获取用户名和密码
 		//获取用户名和密码   
 		String username = request.getParameter("username");
 		String password = request.getParameter("pwd");
-
+	
+		
 		//获取免密登录天数
 		String timelength = request.getParameter("timelength");
 		
@@ -47,7 +52,7 @@ public class LoginServlet extends HttpServlet {
 
 		if(flag == 1) {
 			//TODO 访问登录控制，网站访问量统计
-
+			
 			//获取session对象
 			HttpSession  session = request.getSession();
 			
@@ -57,16 +62,16 @@ public class LoginServlet extends HttpServlet {
 			
 			//将个人信息存放到session中
 			session.setAttribute("employeename", loginedEmployee.getEmployeename());
-			
-			
+
+			session.setAttribute("employeeid", loginedEmployee.getEmployeeid());
+
 			if("1".equals(role)) {//管理员
 				request.getRequestDispatcher("admin/adminindex.jsp").forward(request, response);
 			}
 			if("2".equals(role)) {//员工页面
-				//TODO  LoginServlet 尚未完成 employee/employeeindex.jsp
 				request.getRequestDispatcher("employee/employeeindex.jsp").forward(request, response);
 			}
-
+			
 		}else {
 			
 			if(flag == 0) {//等待审核

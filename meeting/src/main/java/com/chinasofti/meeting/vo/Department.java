@@ -1,10 +1,10 @@
 package com.chinasofti.meeting.vo;
 
 public class Department {
-
+	
 	private String departmentid;
 	private String departmentname;
-
+	
 	public String getDepartmentid() {
 		return departmentid;
 	}
@@ -21,6 +21,6 @@ public class Department {
 	public String toString() {
 		return "Department [departmentid=" + departmentid + ", departmentname=" + departmentname + "]";
 	}
-
-
+	
+	
 }
